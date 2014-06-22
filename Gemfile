@@ -22,6 +22,8 @@ gem "kaminari"
 gem "ransack"
 gem "dynamic_form"
 
+gem "httpclient"
+
 group :test, :development do
   gem "rspec-rails"
   gem "debugger"
