@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Books</h1>
+</div>
+
+
+
+<p><%= link_to("Create a new Book", new_admin_book_path) %></p>
+
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= sortable "id" %></th>
+      <th><%= sortable "title" %></th>
+      <th><%= sortable "url" %></th>
+      <th><%= sortable "cover_url" %></th>
+      <th><%= sortable "description" %></th>
+      <th><%= sortable "publisher" %></th>
+      <th><%= sortable "created_at" %></th>
+      <th><%= sortable "updated_at" %></th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr class="book">
+        <td><%= link_to(book.id, admin_book_path(book)) %></td>
+        <td><%= book.title %></td>
+        <td><%= book.url %></td>
+        <td><%= book.cover_url %></td>
+        <td><%= book.description %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.created_at %></td>
+        <td><%= book.updated_at %></td>
+        <td><%= link_to('Edit', edit_admin_book_path(book)) %></td>
+        <td><%= link_to('Delete', admin_book_path(book), :confirm => "Are you sure?", :method => :delete) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @books %>

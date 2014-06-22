@@ -1,0 +1,45 @@
+<% if @book.errors.any? -%>
+  <ul class="errors">
+  <% @book.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+      <div class="form-group">
+    <%= f.label :title, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :title, :class => "form-control", :placeholder => "Title" %>
+    </div>
+  </div>
+    <div class="form-group">
+    <%= f.label :url, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :url, :class => "form-control", :placeholder => "Url" %>
+    </div>
+  </div>
+    <div class="form-group">
+    <%= f.label :cover_url, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :cover_url, :class => "form-control", :placeholder => "Cover_url" %>
+    </div>
+  </div>
+    <div class="form-group">
+    <%= f.label :description, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :description, :class => "form-control", :placeholder => "Description" %>
+    </div>
+  </div>
+    <div class="form-group">
+    <%= f.label :publisher, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :publisher, :class => "form-control", :placeholder => "Publisher" %>
+    </div>
+  </div>
+    
+<% label = @book.new_record? ? "Create" : "Update" -%>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-4">
+    <button type="submit" class="btn btn-default"><%= label %></button>
+  </div>
+</div>

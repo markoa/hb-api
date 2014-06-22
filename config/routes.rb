@@ -8,6 +8,7 @@ BaseApp::Application.routes.draw do
 
   namespace "admin" do
 
+    resources :books
     resources :users
 
   end
