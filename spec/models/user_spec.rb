@@ -29,7 +29,7 @@ describe User do
       end
 
       it "returns true" do
-        user.role?(admin_role.name).should be_true
+        expect(user.role?(admin_role.name)).to be_true
       end
 
     end
@@ -42,7 +42,7 @@ describe User do
       end
 
       it "returns false" do
-        user.role?(admin_role.name).should be_false
+        expect(user.role?(admin_role.name)).to be_false
       end
 
     end
@@ -57,7 +57,7 @@ describe User do
     end
 
     it "adds admin role to user" do
-      user.should be_admin
+      expect(user).to be_admin
     end
 
   end
@@ -71,7 +71,7 @@ describe User do
     end
 
     it "removes admin role from user" do
-      user.should_not be_admin
+      expect(user).not_to be_admin
     end
 
   end
@@ -84,12 +84,12 @@ describe User do
 
     it "returns true if user is admin" do
       user.roles << admin_role
-      user.admin?.should be_true
+      expect(user.admin?).to be_true
     end
 
     it "returns false is user is not admin" do
       user.roles << customer_role
-      user.admin?.should be_false
+      expect(user.admin?).to be_false
     end
 
   end

@@ -11,7 +11,7 @@ describe Role do
     it "returns role with name 'admin'" do
       role = Role.admin
 
-      role.name.should == "admin"
+      expect(role.name).to eq("admin")
     end
 
   end
